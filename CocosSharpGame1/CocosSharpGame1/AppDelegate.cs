@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using CocosSharp;
 using CocosDenshion;
+using BouncingGame;
 
 namespace CocosSharpGame1
 {
@@ -13,8 +14,8 @@ namespace CocosSharpGame1
             application.ContentRootDirectory = "Content";
             var windowSize = mainWindow.WindowSizeInPixels;
 
-            var desiredWidth = 1024.0f;
-            var desiredHeight = 768.0f;
+            var desiredWidth = 768.0f;
+            var desiredHeight = 1024.0f;
 
             // This will set the world bounds to be (0,0, w, h)
             // CCSceneResolutionPolicy.ShowAll will ensure that the aspect ratio is preserved
@@ -36,8 +37,9 @@ namespace CocosSharpGame1
 
             var scene = new CCScene(mainWindow);
             var introLayer = new IntroLayer();
+            var gameLayer = new GameLayer();
 
-            scene.AddChild(introLayer);
+            scene.AddChild(gameLayer);
 
             mainWindow.RunWithScene(scene);
         }
